@@ -3,6 +3,8 @@ import Blog from "@/views/Blog.vue";
 import Contact from "@/views/Contact.vue";
 import Home from "@/views/Home.vue";
 import NotFound from "@/views/NotFound.vue";
+import Destinations from "@/views/Destinations.vue";
+
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -18,16 +20,20 @@ const router = createRouter({
       name: "about",
       component: About,
     },
-
     {
-      path: "/contact",
-      name: "contact",
-      component: Contact,
+      path: "/destinations",
+      name: "destinations",
+      component: Destinations,
     },
     {
       path: "/blog",
       name: "blog",
       component: Blog,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: Contact,
     },
     { path: "/:pathMatch(.*)*", component: NotFound },
   ],

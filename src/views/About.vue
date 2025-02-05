@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import RecentTrips from '@/components/RecentTrips.vue';
+import Testimonial from '@/components/Testimonial.vue';
+import TravelServices from '@/components/TravelServices.vue';
+import VideoModal from '@/components/VideoModal.vue';
+
+</script>
+
 <template>
 
     <!-- Hero Section -->
@@ -77,6 +85,10 @@
             </div>
         </div>
     </section>
+    <VideoModal/>
+    <TravelServices/>
+    <Testimonial/>
+    <RecentTrips/>
 
 </template>
 

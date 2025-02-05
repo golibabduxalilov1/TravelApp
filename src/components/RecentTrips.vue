@@ -19,8 +19,8 @@ export default {
     <!-- Recent Trips Section -->
     <section class="recent-trips p-140">
         <div class="container text-center">
-            <h2>Recent Trips</h2>
-            <div class="row">
+            <h2 class="mb-5">Recent Trips</h2>
+            <div class="row mt-4">
                 <!-- Trip Card 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="trip-card">
