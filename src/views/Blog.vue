@@ -142,7 +142,7 @@ export default {
           </ul>
         </div>
 
-        <div class="card p-3 mb-4">
+        <!-- <div class="card p-3 mb-4">
           <h5>Recent Post</h5>
           <ul class="list-group">
             <li
@@ -154,22 +154,38 @@ export default {
               {{ post.title }}
             </li>
           </ul>
+        </div> -->
+
+        <div class="card card-recently">
+          <h5 class="mb-4">Recent Post</h5>
+          <div
+            class="media post_item"
+            v-for="post in recentPosts"
+            :key="post.id"
+          >
+            <img :src="post.image" alt="post" />
+            <div class="media-body">
+              <a href="#">
+                {{ post.title }}
+              </a>
+              <p>January 12, 2019</p>
+            </div>
+          </div>
         </div>
 
-        <div class="card p-3 mb-4">
-          <h5>Tag Clouds</h5>
+        <div class="card card-tags">
+          <h5 class="mb-4">Tag Clouds</h5>
           <div>
-            <span
-              class="badge bg-light text-dark m-1"
-              v-for="tag in tags"
-              :key="tag"
-              >{{ tag }}</span
+            <a href="#">
+              <span class="badge m-1" v-for="tag in tags" :key="tag">{{
+                tag
+              }}</span></a
             >
           </div>
         </div>
 
         <div class="card ins-feed">
-          <h5>Instagram Feeds</h5>
+          <h5 class="mb-4">Instagram Feeds</h5>
           <ul class="flex">
             <li
               class="list-group-item"
@@ -181,9 +197,13 @@ export default {
           </ul>
         </div>
 
-        <div class="card p-3">
+        <div class="card news-card">
           <h5>Newsletter</h5>
-          <input type="email" class="form-control" placeholder="Enter email" />
+          <input
+            type="email "
+            class="form-control mb-3"
+            placeholder="Enter email"
+          />
           <button class="btn">SUBSCRIBE</button>
         </div>
       </div>
@@ -235,12 +255,26 @@ export default {
   padding: 30px;
   margin-bottom: 30px;
 }
-.badge {
-  padding: 10px 15px;
-  font-size: 14px;
-  border-radius: 5px;
-}
 
+.badge {
+  display: inline-block;
+  border: 1px solid #eeeeee;
+  background: #fff;
+  padding: 4px 20px;
+  margin-bottom: 8px;
+  margin-right: 3px;
+  transition: all 0.3s ease 0s;
+  color: #888888;
+  font-size: 13px;
+}
+.badge:hover {
+  background: #ff4a52;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 .card-left-search button {
   color: #fff;
   background: #1ec6b6;
@@ -281,6 +315,22 @@ export default {
   margin-bottom: 0;
 }
 
+.card-recently .post_item {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.media-body {
+  align-self: center;
+  padding-left: 20px;
+}
+
+.media-body a {
+  text-decoration: none;
+  color: #7a838b;
+}
+
 .ins-feed ul {
   display: flex;
   margin-right: -6px;
@@ -295,6 +345,19 @@ export default {
   margin-bottom: 15px;
 }
 
-.ins-feed li img {
+.news-card button {
+  color: #fff;
+  background: #1ec6b6;
+  transition: 0.3s;
+}
+
+.news-card input {
+  height: 50px;
+  border-color: #f0e9ff;
+  font-size: 13px;
+  color: #999999;
+  padding-left: 20px;
+  border-radius: 0;
+  border-right: 0;
 }
 </style>
