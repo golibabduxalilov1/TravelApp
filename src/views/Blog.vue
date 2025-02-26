@@ -6,7 +6,8 @@ export default {
         {
           id: 1,
           title: "Google inks pact for new 35-storey office",
-          description: "Short description here",
+          description:
+            "That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.",
           image:
             "https://preview.colorlib.com/theme/travelo/img/blog/single_blog_1.png",
           date: "15 Jan",
@@ -16,7 +17,8 @@ export default {
         {
           id: 2,
           title: "Google inks pact for new 35-storey office",
-          description: "Short description here",
+          description:
+            "That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.",
           image:
             "https://preview.colorlib.com/theme/travelo/img/blog/single_blog_2.png",
           date: "15 Jan",
@@ -26,7 +28,8 @@ export default {
         {
           id: 3,
           title: "Google inks pact for new 35-storey office",
-          description: "Short description here",
+          description:
+            "That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.",
           image:
             "https://preview.colorlib.com/theme/travelo/img/blog/single_blog_4.png",
           date: "15 Jan",
@@ -101,18 +104,23 @@ export default {
 
   <div class="container mt-4 p-140">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-8 mb-5 mb-lg-0">
         <div class="card mb-4" v-for="post in posts" :key="post.id">
           <img :src="post.image" class="card-img-top" alt="Post Image" />
           <div class="card-body">
-            <span class="badge bg-danger position-absolute top-0 start-0 m-3">{{
-              post.date
-            }}</span>
-            <h5 class="card-title mt-3">{{ post.title }}</h5>
-            <p class="card-text">{{ post.description }}</p>
-            <div class="text-muted">
-              <span class="me-3">📍 Travel, Lifestyle</span>
-              <span>💬 03 Comments</span>
+            <h4 class="card-title mt-3">{{ post.title }}</h4>
+            <p class="card-text mt-4 mb-5">{{ post.description }}</p>
+            <div class="d-flex justify-content-between">
+              <div class="text-muted">
+                <span class="me-3"
+                  ><i class="bi bi-person"></i> Travel, Lifestyle</span
+                >
+                <span><i class="bi bi-chat"></i> 03 Comments</span>
+              </div>
+              <div class="date-info text-muted">
+                <i class="bi bi-clock-history me-1"></i>
+                <span>{{ post.date }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -141,20 +149,6 @@ export default {
             </li>
           </ul>
         </div>
-
-        <!-- <div class="card p-3 mb-4">
-          <h5>Recent Post</h5>
-          <ul class="list-group">
-            <li
-              class="list-group-item"
-              v-for="post in recentPosts"
-              :key="post.id"
-            >
-              <img :src="post.image" class="img-thumbnail me-2" width="50" />
-              {{ post.title }}
-            </li>
-          </ul>
-        </div> -->
 
         <div class="card card-recently">
           <h5 class="mb-4">Recent Post</h5>
@@ -256,25 +250,6 @@ export default {
   margin-bottom: 30px;
 }
 
-.badge {
-  display: inline-block;
-  border: 1px solid #eeeeee;
-  background: #fff;
-  padding: 4px 20px;
-  margin-bottom: 8px;
-  margin-right: 3px;
-  transition: all 0.3s ease 0s;
-  color: #888888;
-  font-size: 13px;
-}
-.badge:hover {
-  background: #ff4a52;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff;
-  text-decoration: none;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
 .card-left-search button {
   color: #fff;
   background: #1ec6b6;
@@ -289,6 +264,15 @@ export default {
   padding-left: 20px;
   border-radius: 0;
   border-right: 0;
+}
+
+.card-text {
+  color: #7a838b;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .card-category .list-group {
@@ -359,5 +343,8 @@ export default {
   padding-left: 20px;
   border-radius: 0;
   border-right: 0;
+}
+
+.date-info {
 }
 </style>
